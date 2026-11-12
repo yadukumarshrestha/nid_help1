@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : "A clear guide to Nepal's National ID process, required documents, application status, eNID and card replacement.",
     alternates: {
       canonical: SITE_URL + "/" + locale,
-      languages: { ne: SITE_URL + "/ne", en: SITE_URL + "/en", "x-default": SITE_URL + "/ne" }
+      languages: { ne: SITE_URL + "/ne", en: SITE_URL + "/en", "x-default": SITE_URL + "/en" }
     }
   };
 }

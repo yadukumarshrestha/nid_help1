@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
-const pages = ["", "documents", "how-to-apply", "status", "enid", "duplicate", "correction", "faq", "contact", "about"];
+const pages = ["", "documents", "pre-enrolment", "how-to-apply", "status", "enid", "duplicate", "correction", "faq", "contact", "about"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const languages = ["ne", "en"];

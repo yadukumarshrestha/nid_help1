@@ -3,6 +3,7 @@ import { OFFICIAL } from "@/lib/site";
 export type Locale = "ne" | "en";
 export type GuideSlug =
   | "documents"
+  | "pre-enrolment"
   | "how-to-apply"
   | "status"
   | "enid"
@@ -94,7 +95,7 @@ export const homeCopy = {
 
 export const taskCards: Record<Locale, { slug: GuideSlug; title: string; description: string; tag: string }[]> = {
   ne: [
-    { slug: "how-to-apply", title: "पहिलो पटक NID बनाउँदै", description: "अनलाइन फारामदेखि बायोमेट्रिक दर्तासम्मको प्रक्रिया।", tag: "नयाँ दर्ता" },
+    { slug: "pre-enrolment", title: "पहिलो पटक NID बनाउँदै", description: "अनलाइन फारामदेखि बायोमेट्रिक दर्तासम्मको प्रक्रिया।", tag: "नयाँ दर्ता" },
     { slug: "status", title: "आवेदनको अवस्था हेर्न", description: "आवेदन नम्बर वा NID नम्बरबाट सरकारी पोर्टलमा जाँच गर्नुहोस्।", tag: "आवेदन जाँच" },
     { slug: "enid", title: "eNID डाउनलोड गर्न", description: "डिजिटल परिचयपत्र कहाँबाट र कसरी प्राप्त गर्ने।", tag: "डिजिटल कार्ड" },
     { slug: "duplicate", title: "कार्ड हरायो वा बिग्रियो", description: "प्रतिलिपि लिनुपर्ने प्रक्रिया र शुल्कबारे बुझ्नुहोस्।", tag: "प्रतिलिपि" },
@@ -102,7 +103,7 @@ export const taskCards: Record<Locale, { slug: GuideSlug; title: string; descrip
     { slug: "documents", title: "कागजात तयार गर्न", description: "मूल कागजात र अवस्था अनुसारका थप प्रमाणको सूची।", tag: "तयारी" }
   ],
   en: [
-    { slug: "how-to-apply", title: "Applying for the first time", description: "From the online form to in-person biometric enrolment.", tag: "New enrolment" },
+    { slug: "pre-enrolment", title: "Applying for the first time", description: "From the online form to in-person biometric enrolment.", tag: "New enrolment" },
     { slug: "status", title: "Checking application status", description: "Use the official portal to check with your request or NID number.", tag: "Status" },
     { slug: "enid", title: "Downloading eNID", description: "Where to find and download your digital identity card.", tag: "Digital card" },
     { slug: "duplicate", title: "Lost or damaged card", description: "Understand the replacement process and current fee information.", tag: "Replacement" },
@@ -111,18 +112,22 @@ export const taskCards: Record<Locale, { slug: GuideSlug; title: string; descrip
   ]
 };
 
-export const finderOptions: Record<Locale, { id: string; label: string; description: string; href: string; result: string; action: string }[]> = {
+export const finderOptions: Record<Locale, { id: string; label: string; description: string; href: string }[]> = {
   ne: [
-    { id: "new", label: "अहिलेसम्म दर्ता गरेको छैन", description: "पहिलो पटक राष्ट्रिय परिचयपत्र बनाउनुपर्छ।", href: "/ne/how-to-apply", result: "पहिलो दर्ताको प्रक्रिया र त्यसअघि चाहिने कागजात हेर्नुहोस्।", action: "दर्ता प्रक्रिया हेर्नुहोस्" },
-    { id: "waiting", label: "दर्ता गरिसकेको छु", description: "NID नम्बर वा कार्डको अवस्था थाहा पाउनुपर्छ।", href: "/ne/status", result: "आफ्नो आवेदन अवस्था सरकारी Citizen Portal मा जाँच गर्नुहोस्।", action: "Status हेर्ने तरिका" },
-    { id: "digital", label: "डिजिटल कार्ड चाहिएको छ", description: "eNID डाउनलोड गर्न खोज्दै हुनुहुन्छ।", href: "/ne/enid", result: "आधिकारिक पोर्टलमा eNID डाउनलोड विकल्प खोल्नुहोस्।", action: "eNID जानकारी" },
-    { id: "problem", label: "कार्ड वा विवरणमा समस्या छ", description: "हराएको, बिग्रिएको वा विवरण गलत छ।", href: "/ne/duplicate", result: "समस्या अनुसार प्रतिलिपि वा विवरण सच्याउने प्रक्रिया छान्नुहोस्।", action: "समाधान हेर्नुहोस्" }
+    { id: "new", label: "अहिलेसम्म दर्ता गरेको छैन", description: "पहिलो पटक राष्ट्रिय परिचयपत्र बनाउनुपर्छ।", href: "/ne/pre-enrolment" },
+    { id: "documents", label: "कुन कागजात चाहिन्छ?", description: "आफ्नो अवस्थाअनुसार आवश्यक सक्कल प्रमाणपत्रको सूची हेर्नुहोस्।", href: "/ne/documents" },
+    { id: "waiting", label: "दर्ता गरिसकेको छु", description: "आवेदन वा राष्ट्रिय परिचय नम्बरको अवस्था जाँच गर्नुपर्छ।", href: "/ne/status" },
+    { id: "digital", label: "eNID डाउनलोड गर्न", description: "आफ्नो डिजिटल परिचयपत्र सरकारी पोर्टलबाट प्राप्त गर्नुहोस्।", href: "/ne/enid" },
+    { id: "lost", label: "कार्ड हरायो वा बिग्रियो", description: "प्रतिलिपि लिनुपर्ने प्रक्रिया र शुल्क बुझ्नुहोस्।", href: "/ne/duplicate" },
+    { id: "correction", label: "विवरण सच्याउन", description: "नाम, ठेगाना वा अन्य विवरणमा त्रुटि छ।", href: "/ne/correction" }
   ],
   en: [
-    { id: "new", label: "I have not enrolled yet", description: "I need to apply for my first National ID.", href: "/en/how-to-apply", result: "Read the first-enrolment steps and prepare the required documents.", action: "View application guide" },
-    { id: "waiting", label: "I have already enrolled", description: "I need to know my NID number or card status.", href: "/en/status", result: "Check your application on the official Citizen Portal.", action: "Check status guidance" },
-    { id: "digital", label: "I need a digital card", description: "I want to download my eNID.", href: "/en/enid", result: "Open the eNID download option on the official portal.", action: "Read eNID guidance" },
-    { id: "problem", label: "There is a card or detail issue", description: "My card is lost, damaged or has incorrect details.", href: "/en/duplicate", result: "Choose the replacement or correction process that matches your issue.", action: "Find a solution" }
+    { id: "new", label: "I have not enrolled yet", description: "I need to apply for my first National ID.", href: "/en/pre-enrolment" },
+    { id: "documents", label: "What documents do I need?", description: "See the original documents required for your situation.", href: "/en/documents" },
+    { id: "waiting", label: "I have already enrolled", description: "I need to check my request or National Identity Number status.", href: "/en/status" },
+    { id: "digital", label: "I need to download eNID", description: "Get your digital identity card through the official portal.", href: "/en/enid" },
+    { id: "lost", label: "My card is lost or damaged", description: "Understand the replacement process and fee.", href: "/en/duplicate" },
+    { id: "correction", label: "I need to correct my details", description: "There is an error in my name, address or other details.", href: "/en/correction" }
   ]
 };
 
@@ -183,6 +188,22 @@ export const guides: Record<Locale, Record<GuideSlug, Guide>> = {
       officialLabel: "विभागको आधिकारिक कागजातसम्बन्धी FAQ",
       officialUrl: OFFICIAL.faq,
       reminder: "यो सूची सामान्य तयारीका लागि हो। अन्तिम निर्णय सम्बन्धित सरकारी दर्ता अधिकारी र हालको विभागीय निर्देशनअनुसार हुन्छ।"
+    },
+    "pre-enrolment": {
+      eyebrow: "PRE-ENROLMENT • नयाँ दर्ता",
+      title: "पहिलो पटक राष्ट्रिय परिचयपत्र बनाउँदै हुनुहुन्छ?",
+      description: "अनलाइन pre-enrolment, आवश्यक सक्कल कागजात र बायोमेट्रिक दर्ताको चरणबद्ध मार्गदर्शन।",
+      answerTitle: "पहिले योग्यता बुझ्नुहोस्",
+      answer: "विभागको FAQ अनुसार १६ वर्ष उमेर पूरा भई नेपाली नागरिकताको प्रमाणपत्र लिएका व्यक्तिले राष्ट्रिय परिचयपत्रका लागि विवरण दर्ता गराउन सक्छन्। अनलाइन फाराम भरेपछि Application ID वा QR भएको रसिद प्रिन्ट गरी तोकिएको दर्ता इकाईमा बायोमेट्रिक विवरण दिन जानुपर्छ।",
+      sections: [
+        { title: "१. आवश्यक कागजात तयार गर्नुहोस्", items: ["नेपाली नागरिकताको सक्कल प्रमाणपत्र।", "नागरिकतामा भएको स्थायी ठेगानाभन्दा फरक ठेगाना कायम गर्नुपर्ने भए बसाइँसराइको सक्कल प्रमाणपत्र।", "नागरिकतामा पति/पत्नीको नाम नखुलेको भए विवाह दर्ता, विवाह प्रमाणित वा नाता प्रमाणितको सक्कल प्रमाणपत्र।", "नागरिकतामा जन्ममिति नखुलेको भए जन्मदर्ता, शैक्षिक प्रमाणपत्र, राहदानी वा पेन्सन पट्टाजस्ता आधिकारिक प्रमाण।", "आफ्नो विवरण पुष्टि गर्न आवश्यक पर्ने अन्य सक्कल कागजात।"] },
+        { title: "२. आधिकारिक Pre-Enrollment फाराम भर्नुहोस्", body: "सरकारी NID Pre-Enrollment System खोल्नुहोस्। त्यहाँ देखाइएको निर्देशनअनुसार व्यक्तिगत विवरण भर्नुहोस् र उपलब्ध भए biometric appointment छान्नुहोस्। आफ्नो नागरिकता नम्बर वा अन्य व्यक्तिगत विवरण NID Help मा नलेख्नुहोस्।" },
+        { title: "३. Application ID / QR रसिद सुरक्षित राख्नुहोस्", body: "फाराम पूरा भएपछि प्रणालीले दिने Application ID वा QR Code भएको रसिद डाउनलोड गरी प्रिन्ट गर्नुहोस्। दर्ता इकाईमा जाँदा रसिद र सक्कल कागजात साथमा लैजानुहोस्।" },
+        { title: "४. बायोमेट्रिक दर्ता पूरा गर्नुहोस्", items: ["तोकिएको जिल्ला प्रशासन कार्यालय, दर्ता स्टेशन भएको इलाका प्रशासन कार्यालय वा सञ्चालनमा रहेको आधिकारिक घुम्ती दर्ता इकाईमा जानुहोस्।", "कर्मचारीले सक्कल कागजात जाँच गरी फोटो, औँठाछाप, आँखाको Iris लगायत आवश्यक जैविक विवरण संकलन गर्छन्।", "Confirmation Page मा नाम, जन्ममिति र ठेगाना ध्यान दिएर जाँच्नुहोस्। त्रुटि भए हस्ताक्षर गर्नुअघि सच्याउन भन्नुहोस्।", "कार्ड छापिएपछि SMS आएपछि विवरण दर्ता गराएको स्थानबाट कार्ड संकलन गर्नुहोस्।"] }
+      ],
+      officialLabel: "NID Pre-Enrollment खोल्नुहोस्",
+      officialUrl: OFFICIAL.preEnrolment,
+      reminder: "अनलाइन फाराम भर्नु मात्रले दर्ता पूरा हुँदैन। बायोमेट्रिक विवरणका लागि तोकिएको दर्ता इकाईमा स्वयं उपस्थित हुनुपर्छ।"
     },
     "how-to-apply": {
       eyebrow: "नयाँ दर्ता",
@@ -310,6 +331,22 @@ export const guides: Record<Locale, Record<GuideSlug, Guide>> = {
       officialUrl: OFFICIAL.faq,
       reminder: "This checklist is for general preparation. The government enrolment officer and current department instructions determine the final requirements."
     },
+    "pre-enrolment": {
+      eyebrow: "FIRST-TIME APPLICATION • PRE-ENROLMENT",
+      title: "Applying for your first National Identity Card?",
+      description: "A step-by-step guide to online pre-enrolment, original documents and in-person biometric registration.",
+      answerTitle: "Check eligibility first",
+      answer: "The department FAQ says a person who is at least 16 years old and holds a Nepali citizenship certificate can enrol for a National Identity Card. After completing the online form, print the receipt containing your Application ID or QR code and attend the assigned enrolment unit for biometrics.",
+      sections: [
+        { title: "1. Prepare the required documents", items: ["Original Nepali citizenship certificate.", "Original migration certificate if you need to establish a permanent address different from the one on your citizenship certificate.", "Original marriage registration, marriage verification or relationship verification if your spouse's name is not shown on your citizenship certificate.", "Official date-of-birth evidence if your citizenship certificate does not show it: birth registration, academic certificate, passport or pension record.", "Any other original documents needed to verify your details."] },
+        { title: "2. Complete the official Pre-Enrollment form", body: "Open the government NID Pre-Enrollment System. Follow its instructions to enter your demographic details and choose a biometric appointment where the system offers one. Do not enter your citizenship number or other personal details on NID Help." },
+        { title: "3. Save and print your Application ID / QR receipt", body: "After submitting the form, download and print the receipt containing your Application ID or QR code. Bring it together with your original documents to the enrolment unit." },
+        { title: "4. Complete in-person biometric enrolment", items: ["Visit the assigned District Administration Office, an Area Administration Office with an enrolment station, or an official mobile enrolment unit operating in your area.", "The officer checks your original documents and captures your photograph, fingerprints, iris and other required biometric details.", "Review your name, date of birth and address on the Confirmation Page. Ask for corrections before signing if anything is wrong.", "When you receive an SMS that your card has been printed, collect it from the place where you enrolled."] }
+      ],
+      officialLabel: "Open NID Pre-Enrollment",
+      officialUrl: OFFICIAL.preEnrolment,
+      reminder: "Submitting the online form alone does not complete enrolment. You must attend the assigned enrolment unit in person for biometric capture."
+    },
     "how-to-apply": {
       eyebrow: "FIRST ENROLMENT",
       title: "How do you apply for a National ID?",
@@ -426,13 +463,13 @@ export const guides: Record<Locale, Record<GuideSlug, Guide>> = {
 export const navLabels: Record<Locale, { label: string; slug: GuideSlug }[]> = {
   ne: [
     { label: "कागजात", slug: "documents" },
-    { label: "कसरी बनाउने", slug: "how-to-apply" },
+    { label: "कसरी बनाउने", slug: "pre-enrolment" },
     { label: "Status", slug: "status" },
     { label: "FAQ", slug: "faq" }
   ],
   en: [
     { label: "Documents", slug: "documents" },
-    { label: "How to apply", slug: "how-to-apply" },
+    { label: "Pre-enrolment", slug: "pre-enrolment" },
     { label: "Status", slug: "status" },
     { label: "FAQ", slug: "faq" }
   ]
