@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: "NID Help Nepal — राष्ट्रिय परिचयपत्र बुझ्न सजिलो",
     description: SITE_DESCRIPTION,
-    locale: "ne_NP",
-    alternateLocale: ["en_US"]
+    locale: "en_US",
+    alternateLocale: ["ne_NP"]
   },
   twitter: {
     card: "summary_large_image",

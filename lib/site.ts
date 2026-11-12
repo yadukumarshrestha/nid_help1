@@ -5,7 +5,7 @@ export const SITE_DESCRIPTION =
 const deploymentHost = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ||
-  (deploymentHost ? "https://" + deploymentHost : "https://nid-help1.vercel.app")
+  (deploymentHost ? "https://" + deploymentHost : "https://nidinfo.yadukumarshrestha.com.np")
 ).replace(/\/$/, "");
 
 export const OFFICIAL = {
