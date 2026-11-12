@@ -1,60 +1,74 @@
 # NID Help Nepal
 
-A citizen-first, bilingual guide to Nepal's National Identity Card (राष्ट्रिय परिचयपत्र) journey.
+A citizen-first, Nepali/English guide to Nepal's National Identity Card (राष्ट्रिय परिचयपत्र) journey.
 
-## Product direction
+**New direction:** a task-first NID navigator. Visitors choose what they need to do and receive the relevant next steps, rather than having to browse a long directory of articles.
 
-NID Help is an independent navigation and explainability layer. It helps people choose the task they need, understand the next step, prepare documents, and continue only on official government services.
+> NID Help is an independent guide, not a Government of Nepal or DoNIDCR website. It does not access government records, submit applications, issue cards, check status or accept payments.
 
-It is **not** a government website and does not issue cards, access government records, check application status on its servers, or accept payments.
+## What's included
 
-## New product approach
-
-- Task-first navigation rather than a traditional article directory.
-- Guided "What do you need to do?" flow on the home page.
-- Clear journey pages for first application, status, eNID, replacement, corrections, documents and help.
-- Nepali-first with a complete English experience.
-- Mobile-first editorial interface with short answers, source notes and visible review dates.
-- Official portal hand-offs for every sensitive action.
+- Nepali and English routes (/ne and /en)
+- Task finder on the homepage for new enrolment, status, eNID and card/detail issues
+- Dedicated guides for documents, applying, status, eNID, replacement, correction, FAQs, contact and about
+- Interactive document checklist with a print action
+- Searchable FAQ page
+- Official government portal links for sensitive tasks
+- Page metadata, canonical/hreflang, sitemap, robots.txt and llms.txt
+- Mobile-first responsive design, accessible controls and security response headers
+- GitHub Actions CI for typecheck, lint and production build
 
 ## Privacy by design
 
-This project must never collect or store citizenship numbers, NID numbers, application IDs, QR receipts, photos, biometrics, signatures, passwords or payment details. No login, database, analytics storage or status lookup API is included. Personal-data tasks stay on official government domains.
+This project must never collect or store citizenship numbers, NID numbers, application IDs, QR receipts, photos, biometrics, signatures, OTPs, passwords or payment details. There is no login, database, local storage or status lookup API. Personal-data tasks remain on official government domains.
 
 ## Tech stack
 
 - Next.js App Router + TypeScript
-- Tailwind CSS 4
 - React 19
+- Tailwind CSS 4
 - Lucide icons
-- Static, content-led pages; no database
+- Static content; no database
 
 ## Local development
 
-```bash
+Node.js 20.9+ is required (Node 22 is recommended).
+
+~~~bash
 npm install
 npm run dev
-```
+~~~
 
 Quality checks:
 
-```bash
+~~~bash
 npm run typecheck
 npm run lint
 npm run build
-```
+~~~
+
+## Vercel deployment
+
+1. Import the repository yadukumarshrestha/nid_help1 into Vercel.
+2. Select the Next.js framework preset and Node.js 22.
+3. Set NEXT_PUBLIC_SITE_URL to the final HTTPS production domain.
+4. Deploy and test all Nepali/English routes and government links.
+5. Submit the production sitemap to Google Search Console and Bing Webmaster Tools.
+
+No database or secret environment variables are required.
 
 ## Official sources
 
 - [DoNIDCR](https://donidcr.gov.np/)
 - [Official NID FAQ](https://donidcr.gov.np/pages/abboyed-asked-questions--rational-identity-10/)
 - [Data collection methods](https://donidcr.gov.np/pages/data-collection-methods-9/)
-- [Official Citizen Portal — Nepali](https://citizenportal.donidcr.gov.np/ne)
-- [Official Citizen Portal — English](https://citizenportal.donidcr.gov.np/en)
-- [Official Online Enrolment](https://enrollment.donidcr.gov.np/)
+- [Citizen Portal — Nepali](https://citizenportal.donidcr.gov.np/ne)
+- [Citizen Portal — English](https://citizenportal.donidcr.gov.np/en)
+- [Online enrolment](https://enrollment.donidcr.gov.np/)
 
-Government processes can change. Reconfirm fees, helplines and instructions before publishing updates.
+Fees, phone numbers and procedures may change. Reconfirm these facts on government sources before updating content.
 
-## Status
+## Project documents
 
-Fresh implementation in progress. See `docs/PRODUCT.md` for the product and safety rules.
+- docs/PRODUCT.md — product direction and privacy rules
+- docs/DEPLOYMENT.md — deployment and launch checklist

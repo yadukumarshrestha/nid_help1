@@ -2,9 +2,10 @@ export const SITE_NAME = "NID Help Nepal";
 export const SITE_DESCRIPTION =
   "नेपालको राष्ट्रिय परिचयपत्रबारे सजिलो, भरपर्दो र द्विभाषिक नागरिक मार्गदर्शन। An independent guide to Nepal's National Identity Card process.";
 
+const deploymentHost = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? \`https://\${process.env.VERCEL_URL}\` : "https://nidhelp.vercel.app")
+  (deploymentHost ? "https://" + deploymentHost : "https://nid-help1.vercel.app")
 ).replace(/\/$/, "");
 
 export const OFFICIAL = {
