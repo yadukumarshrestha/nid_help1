@@ -247,7 +247,7 @@ export const guides: Record<Locale, Record<GuideSlug, Guide>> = {
         { title: "विकल्प नदेखिएमा", body: "पोर्टलको भाषा वा सेवा विकल्प जाँच्नुहोस्। योग्यतासम्बन्धी वा प्राविधिक समस्या भए DoNIDCR को आधिकारिक FAQ र सम्पर्क माध्यम प्रयोग गर्नुहोस्।" }
       ],
       officialLabel: "आधिकारिक Citizen Portal खोल्नुहोस्",
-      officialUrl: OFFICIAL.citizenNe,
+      officialUrl: OFFICIAL.eNidNe,
       reminder: "eNID प्राप्त गर्न नागरिकता नम्बर वा अन्य संवेदनशील विवरण यो वेबसाइटमा कहिल्यै नलेख्नुहोस्।"
     },
     duplicate: {
@@ -389,7 +389,7 @@ export const guides: Record<Locale, Record<GuideSlug, Guide>> = {
         { title: "If you cannot find the option", body: "Check the portal language and service menu. For eligibility or technical questions, use the official DoNIDCR FAQ and contact channels." }
       ],
       officialLabel: "Open official Citizen Portal",
-      officialUrl: OFFICIAL.citizenEn,
+      officialUrl: OFFICIAL.eNidEn,
       reminder: "Never enter your citizenship number or other sensitive details on this website."
     },
     duplicate: {
@@ -403,7 +403,7 @@ export const guides: Record<Locale, Record<GuideSlug, Guide>> = {
         { title: "Replacement fee", body: "The department FAQ and current Citizen Portal list a replacement fee of NPR 500. Recheck the amount and payment instructions on the official portal before paying." }
       ],
       officialLabel: "Official replacement payment page",
-      officialUrl: OFFICIAL.replacementNe,
+      officialUrl: OFFICIAL.replacementEn,
       reminder: "NID Help never accepts payments. Confirm the amount, revenue heading and process with the official portal or office."
     },
     correction: {

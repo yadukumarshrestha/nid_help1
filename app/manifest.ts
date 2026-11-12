@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "NID Help Nepal",
     short_name: "NID Help",
     description: "An independent guide to Nepal's National Identity Card process.",
-    start_url: "/ne",
+    start_url: "/en",
     display: "standalone",
     background_color: "#f5f6f1",
     theme_color: "#123d3a",

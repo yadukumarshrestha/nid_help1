@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   category: "government services information",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   alternates: {
-    languages: { ne: "/ne", en: "/en", "x-default": "/ne" }
+    languages: { ne: "/ne", en: "/en", "x-default": "/en" }
   },
   openGraph: {
     type: "website",
@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ne">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

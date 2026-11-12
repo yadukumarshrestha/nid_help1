@@ -320,3 +320,370 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
   .checklist-card { border: 0; box-shadow: none; }
   .checklist-item { break-inside: avoid; }
 }
+
+
+/* Task cards now navigate directly to their own guide pages. */
+.finder-option {
+  color: var(--ink);
+  text-decoration: none;
+}
+.finder-option:focus-visible {
+  outline: 3px solid #ef9d63;
+  outline-offset: 3px;
+}
+.finder-chevron {
+  flex: 0 0 auto;
+  transition: transform .18s ease, color .18s ease;
+}
+.finder-option:hover .finder-chevron {
+  color: var(--green);
+  transform: translate(2px, -2px);
+}
+.finder-hint {
+  line-height: 1.7;
+  padding: 0 8px;
+}
+
+/* High-visibility government service graphic on each task page. */
+.official-action-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  align-items: center;
+  gap: 24px;
+  min-height: 245px;
+  padding: 28px 30px;
+  margin: 0 0 24px;
+  border-radius: 18px;
+  color: #fff;
+  background: linear-gradient(122deg, #103b37 0%, #15544c 68%, #1f6656 100%);
+  box-shadow: 0 16px 42px rgba(18,61,58,.12);
+}
+.official-action-card:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 360px;
+  height: 360px;
+  right: 68px;
+  top: -240px;
+  border-radius: 50%;
+  border: 1px solid rgba(220,248,124,.22);
+  box-shadow: 0 0 0 30px rgba(220,248,124,.035), 0 0 0 65px rgba(220,248,124,.025);
+}
+.official-action-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+.official-action-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lime);
+  font-size: 9px;
+  line-height: 1.4;
+  font-weight: 900;
+  letter-spacing: 1.15px;
+}
+.official-action-eyebrow:before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 5px rgba(244,163,107,.12);
+}
+.official-action-card h2 {
+  margin: 10px 0 8px;
+  color: white;
+  font-size: clamp(20px, 2.4vw, 27px);
+  line-height: 1.3;
+  letter-spacing: -.7px;
+}
+.official-action-card p {
+  max-width: 500px;
+  margin: 0;
+  color: #d0e0d8;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.official-action-button {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 46px;
+  margin-top: 18px;
+  padding: 0 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 10px;
+  background: var(--lime);
+  color: #123a34;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 900;
+  transition: transform .18s ease, background .18s ease;
+}
+.official-action-button:hover {
+  transform: translateY(-2px);
+  background: #eaff9e;
+}
+.official-action-meta {
+  display: block;
+  margin-top: 11px;
+  color: #a9c6ba;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+.official-action-art {
+  position: relative;
+  min-height: 170px;
+  display: grid;
+  place-items: center;
+}
+.official-action-orbit {
+  position: absolute;
+  width: 174px;
+  height: 174px;
+  border-radius: 50%;
+  border: 1px dashed rgba(220,248,124,.36);
+  box-shadow: 0 0 0 17px rgba(220,248,124,.04), 0 0 0 38px rgba(220,248,124,.025);
+}
+.official-action-icon {
+  position: relative;
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  color: var(--lime);
+  border: 1px solid rgba(220,248,124,.5);
+  border-radius: 27px;
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,.12);
+  transform: rotate(-7deg);
+}
+.official-action-stamp {
+  position: absolute;
+  z-index: 2;
+  right: 5px;
+  bottom: 2px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 8px;
+  color: #f0f7ed;
+  background: rgba(9,43,39,.72);
+  font-size: 8px;
+  line-height: 1.35;
+  letter-spacing: 1px;
+  font-weight: 900;
+  transform: rotate(5deg);
+}
+
+/* Page-specific preparation checklists. */
+.journey-checklist {
+  padding: 23px 24px;
+  margin: 22px 0 9px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(19,56,52,.045);
+}
+.journey-checklist-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+.journey-checklist-top h2 {
+  margin: 6px 0;
+  font-size: 19px;
+  line-height: 1.35;
+  letter-spacing: -.45px;
+}
+.journey-checklist-top p {
+  max-width: 580px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+.journey-checklist-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--green);
+  white-space: nowrap;
+}
+.journey-checklist-counter strong {
+  font-size: 19px;
+  line-height: 1.25;
+}
+.journey-checklist-counter span {
+  color: #84918b;
+  font-size: 9px;
+  font-weight: 800;
+}
+.journey-checklist .progress-track {
+  margin: 17px 0 12px;
+}
+.journey-checklist-items {
+  display: grid;
+}
+.journey-check-item {
+  display: grid;
+  grid-template-columns: 22px 24px 1fr;
+  align-items: start;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid #edf0ec;
+  cursor: pointer;
+}
+.journey-check-item input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.journey-check-item input:focus-visible + .journey-custom-check {
+  outline: 3px solid #ef9d63;
+  outline-offset: 3px;
+}
+.journey-custom-check {
+  width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  border: 1.5px solid #cbd7cf;
+  color: white;
+}
+.journey-custom-check svg {
+  opacity: 0;
+}
+.journey-check-item.checked .journey-custom-check {
+  background: var(--green);
+  border-color: var(--green);
+}
+.journey-check-item.checked .journey-custom-check svg {
+  opacity: 1;
+}
+.journey-check-number {
+  color: #96a49b;
+  font-size: 9px;
+  line-height: 1.9;
+  font-weight: 900;
+}
+.journey-check-item strong {
+  font-size: 11px;
+  line-height: 1.7;
+  font-weight: 700;
+}
+.journey-check-item.checked strong {
+  color: #84918a;
+  text-decoration: line-through;
+}
+.journey-checklist-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #edf0ec;
+  padding-top: 13px;
+  margin-top: 5px;
+  color: #8a9890;
+  font-size: 9px;
+}
+.journey-checklist-footer > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .official-action-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 23px 20px 19px;
+    min-height: 0;
+  }
+  .official-action-art {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    min-height: 0;
+    width: 105px;
+    height: 105px;
+    opacity: .6;
+    transform: scale(.72);
+    transform-origin: top right;
+  }
+  .official-action-orbit {
+    width: 135px;
+    height: 135px;
+  }
+  .official-action-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 21px;
+  }
+  .official-action-icon svg {
+    width: 34px;
+    height: 34px;
+  }
+  .official-action-stamp { display: none; }
+  .official-action-copy { max-width: 100%; }
+  .official-action-card h2 {
+    max-width: calc(100% - 45px);
+    font-size: 20px;
+  }
+  .official-action-card p {
+    font-size: 10px;
+    max-width: 100%;
+  }
+  .official-action-button {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .journey-checklist {
+    padding: 18px 15px;
+  }
+  .journey-checklist-top h2 {
+    font-size: 17px;
+  }
+  .journey-checklist-top p {
+    font-size: 10px;
+  }
+  .journey-check-item {
+    grid-template-columns: 22px 18px 1fr;
+    gap: 8px;
+  }
+  .journey-check-item strong {
+    font-size: 10px;
+  }
+  .journey-checklist-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .journey-checklist-footer > div {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media print {
+  .official-action-card,
+  .journey-checklist-footer,
+  .guide-sidebar {
+    display: none !important;
+  }
+  .journey-checklist {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+}
