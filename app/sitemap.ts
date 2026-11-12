@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: SITE_URL + "/" + locale + (page ? "/" + page : ""),
       lastModified: new Date("2026-11-12T00:00:00+05:45"),
       changeFrequency: page === "" ? "weekly" as const : "monthly" as const,
-      priority: page === "" ? 1 : page === "status" || page === "how-to-apply" ? 0.9 : 0.7
+      priority: page === "" ? 1 : page === "status" || page === "pre-enrolment" || page === "how-to-apply" ? 0.9 : 0.7
     }))
   );
 }

@@ -1,6 +1,6 @@
 # NID Help Nepal
 
-A citizen-first, Nepali/English guide to Nepal's National Identity Card (राष्ट्रिय परिचयपत्र) journey.
+A citizen-first, English-default Nepali/English guide to Nepal's National Identity Card (राष्ट्रिय परिचयपत्र) journey.
 
 **New direction:** a task-first NID navigator. Visitors choose what they need to do and receive the relevant next steps, rather than having to browse a long directory of articles.
 
@@ -8,10 +8,10 @@ A citizen-first, Nepali/English guide to Nepal's National Identity Card (रा�
 
 ## What's included
 
-- Nepali and English routes (/ne and /en)
-- Task finder on the homepage for new enrolment, status, eNID and card/detail issues
-- Dedicated guides for documents, applying, status, eNID, replacement, correction, FAQs, contact and about
-- Interactive document checklist with a print action
+- English-default root route (/) with Nepali and English routes (/ne and /en), preserving the current page when switching language
+- Direct task cards on the homepage; each opens its own pre-enrolment, document, status, eNID, replacement or correction guide
+- Dedicated guides for pre-enrolment, documents, status, eNID, replacement, correction, FAQs, contact and about
+- Task-specific interactive preparation checklists with print actions and official-service graphic cards
 - Searchable FAQ page
 - Official government portal links for sensitive tasks
 - Page metadata, canonical/hreflang, sitemap, robots.txt and llms.txt
