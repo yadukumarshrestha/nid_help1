@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { Manrope, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
+const nepali = Noto_Sans_Devanagari({ subsets: ["devanagari"], variable: "--font-nepali", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -44,7 +48,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${manrope.variable} ${nepali.variable}`}>{children}</body>
     </html>
   );
 }
