@@ -174,79 +174,23 @@ export default async function GuidePage({
           </article>
 
           <aside className="guide-sidebar">
-            <div className="sidebar-card dark">
-              <span className="mini-label">{ne ? "आधिकारिक सेवा" : "OFFICIAL SERVICE"}</span>
-              <h3>{ne ? "सरकारी पोर्टलमा अघि बढ्नुहोस्" : "Continue on the government portal"}</h3>
-              <p>
-                {ne
-                  ? "व्यक्तिगत विवरण, आवेदन, status वा भुक्तानी सरकारी वेबसाइटमै गर्नुहोस्।"
-                  : "Enter personal details, submit applications, check status or make payments only on government websites."}
-              </p>
-              {guide.officialUrl && (
-                <a
-                  className="button button-primary button-small"
-                  href={guide.officialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {guide.officialLabel || (ne ? "आधिकारिक लिंक खोल्नुहोस्" : "Open official link")}
-                  <ArrowUpRight size={15} />
+            {guide.officialUrl && (
+              <div className="sidebar-card dark">
+                <span className="mini-label">{ne ? "सरकारी वेबसाइट" : "GOVERNMENT WEBSITE"}</span>
+                <h3>{ne ? "आधिकारिक सेवामा जानुहोस्" : "Continue on the official site"}</h3>
+                <p>{ne ? "आवेदन, व्यक्तिगत विवरण र भुक्तानी सरकारी पोर्टलमै गर्नुहोस्।" : "Use the government portal for applications, personal details and payments."}</p>
+                <a className="button button-primary button-small" href={guide.officialUrl} target="_blank" rel="noopener noreferrer">
+                  {guide.officialLabel || (ne ? "आधिकारिक लिंक खोल्नुहोस्" : "Open official link")}<ArrowUpRight size={15} />
                 </a>
-              )}
-              <div className="sidebar-meta">
-                <ShieldCheck size={13} />
-                {ne ? "सरकारी डोमेनमा जानुहुन्छ" : "Opens a government domain"}
               </div>
-            </div>
-
+            )}
             <div className="sidebar-card">
-              <h3>{ne ? "सम्बन्धित मार्गदर्शन" : "Related guides"}</h3>
+              <h3>{ne ? "सम्बन्धित पेज" : "Related pages"}</h3>
               <div className="sidebar-links">
-                {related
-                  .filter((item) => item.slug !== slug)
-                  .slice(0, 4)
-                  .map((item) => (
-                    <Link key={item.slug} href={"/" + locale + "/" + item.slug}>
-                      {item.label}<ArrowRight size={14} />
-                    </Link>
-                  ))}
-                <Link href={"/" + locale + "/contact"}>
-                  {ne ? "सम्पर्क र सहायता" : "Contact and support"}<ArrowRight size={14} />
-                </Link>
+                {related.filter((item) => item.slug !== slug).slice(0, 4).map((item) => (
+                  <Link key={item.slug} href={"/" + locale + "/" + item.slug}>{item.label}<ArrowRight size={14} /></Link>
+                ))}
               </div>
-            </div>
-
-            <div className="sidebar-card">
-              <h3>{ne ? "स्रोत र समीक्षा" : "Sources and review"}</h3>
-              <p>
-                {ne
-                  ? "प्रक्रियाहरू परिवर्तन हुन सक्छन्। सरकारी सूचना र FAQ पुनः हेर्नुहोस्।"
-                  : "Processes may change. Recheck official notices and FAQs."}
-              </p>
-              <div className="sidebar-links">
-                <a href={OFFICIAL.faq} target="_blank" rel="noopener noreferrer">
-                  {ne ? "विभागको FAQ" : "Department FAQ"}<ExternalLink size={13} />
-                </a>
-                <a href={OFFICIAL.department} target="_blank" rel="noopener noreferrer">
-                  {ne ? "DoNIDCR वेबसाइट" : "DoNIDCR website"}<ExternalLink size={13} />
-                </a>
-              </div>
-              <div className="sidebar-meta">
-                <FileCheck2 size={13} />
-                {ne ? "समीक्षा मिति" : "Reviewed"}: {CONTENT_REVIEWED}
-              </div>
-            </div>
-
-            <div className="sidebar-card">
-              <h3>{ne ? "थप सहयोग चाहियो?" : "Need more help?"}</h3>
-              <p>
-                {ne
-                  ? "आधिकारिक सहायता माध्यमबारे जानकारी हेर्नुहोस्।"
-                  : "Find the department's listed support channels."}
-              </p>
-              <Link className="button button-dark button-small" href={"/" + locale + "/contact"}>
-                {ne ? "सहायता हेर्नुहोस्" : "Get support"}<LifeBuoy size={15} />
-              </Link>
             </div>
           </aside>
         </div>
