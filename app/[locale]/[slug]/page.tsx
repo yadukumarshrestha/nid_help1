@@ -119,7 +119,7 @@ export default async function GuidePage({
           <article className="guide-content">
             <section className="answer-card">
               <span className="answer-label">
-                {ne ? "एक मिनेटमा बुझ्नुहोस्" : "THE QUICK ANSWER"}
+                {ne ? "छोटोमा" : "IN SHORT"}
               </span>
               <h2>{guide.answerTitle}</h2>
               <p>{guide.answer}</p>
@@ -174,16 +174,6 @@ export default async function GuidePage({
           </article>
 
           <aside className="guide-sidebar">
-            {guide.officialUrl && (
-              <div className="sidebar-card dark">
-                <span className="mini-label">{ne ? "सरकारी वेबसाइट" : "GOVERNMENT WEBSITE"}</span>
-                <h3>{ne ? "आधिकारिक सेवामा जानुहोस्" : "Continue on the official site"}</h3>
-                <p>{ne ? "आवेदन, व्यक्तिगत विवरण र भुक्तानी सरकारी पोर्टलमै गर्नुहोस्।" : "Use the government portal for applications, personal details and payments."}</p>
-                <a className="button button-primary button-small" href={guide.officialUrl} target="_blank" rel="noopener noreferrer">
-                  {guide.officialLabel || (ne ? "आधिकारिक लिंक खोल्नुहोस्" : "Open official link")}<ArrowUpRight size={15} />
-                </a>
-              </div>
-            )}
             <div className="sidebar-card">
               <h3>{ne ? "सम्बन्धित पेज" : "Related pages"}</h3>
               <div className="sidebar-links">
